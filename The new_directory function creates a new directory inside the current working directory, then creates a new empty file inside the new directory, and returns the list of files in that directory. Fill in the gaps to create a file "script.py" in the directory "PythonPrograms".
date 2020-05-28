@@ -1,0 +1,9 @@
+import os
+def new_directory(directory, filename):
+    os.makedirs(directory, exist_ok=True)
+    os.chdir(directory)
+    with open(filename, 'w') as file:
+        file.write("")
+    os.chdir("..")
+    return(os.listdir(directory))
+print(new_directory("PythonPrograms", "script.py"))
